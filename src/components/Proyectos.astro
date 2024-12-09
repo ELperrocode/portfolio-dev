@@ -1,0 +1,40 @@
+---
+import ProjectCard from "./ProjectCard.astro";
+
+// projects.astro
+---
+
+<section class="w-full mx-auto lg:w-[1100px] py-8">
+  <div class="container mx-auto px-4">
+    <h2 class="text-4xl font-bold mb-8">Proyectos</h2>
+
+    <div class="grid grid-flow-row gap-8 item">
+      <ProjectCard
+        title="Project 1"
+        imgSrc="https://github.githubassets.com/assets/social-2deb6d7d43e7.jpg"
+        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus eget sapien lorem ipsum dolor sit amet."
+        repoLink="https://github.com/yourusername/project1"
+        webLink="https://yourwebsite.com/project1"
+      />
+      <ProjectCard
+        title="PROJECT 2"
+        imgSrc="https://github.githubassets.com/assets/social-2deb6d7d43e7.jpg"
+        description="Brief description of the project."
+        repoLink="https://github.com/yourusername/project2"
+      />
+      <ProjectCard
+        title="PROJECT 3"
+        imgSrc="https://github.githubassets.com/assets/social-2deb6d7d43e7.jpg"
+        description="Brief description of the project."
+        repoLink="https://github.com/yourusername/project3"
+        webLink="https://yourwebsite.com/project3"
+      />
+      <ProjectCard
+        title="PROJECT 4"
+        imgSrc="https://github.githubassets.com/assets/social-2deb6d7d43e7.jpg"
+        description="Brief description of the project."
+        repoLink=" "
+      />
+    </div>
+  </div>
+</section>

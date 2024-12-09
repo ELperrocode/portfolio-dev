@@ -1,0 +1,46 @@
+---
+import Badge from "./Badge.astro";
+import SocialPill from "./SocialPill.astro";
+import LinkedInIcon from "./Icons/Linkedin.astro";
+import GitHubIcon from "./Icons/GitHub.astro";
+import MailIcon from "./Icons/Mail.astro";
+
+// Hero.astro
+---
+
+<section class="relative z-10 w-full mx-auto lg:w-[740px] py-60">
+  <img 
+    class="w-24 h-24 rounded-full mb-4"
+    src="https://miro.medium.com/v2/resize:fit:1200/0*n-2bW82Z6m6U2bij.jpeg"
+    alt="pfp"
+  />
+
+  <h1 class="text-white text-5xl font-bold flex flex-row gap-x-4 pb-5">
+    Hola soy Henry 
+  </h1>
+
+  <h2 class="text-xl text-wrap mb-5">
+    <span class="text-accent">Desarrollador Fullstack</span>
+  en formación, actualmente cursando el ultimo año de la carrera de Desarrollo de Software en la
+    <span class=" text-primary"> Universidad Tecnologica de Panamá</span>. 
+    Mi objetivo es no solo escribir código, sino crear soluciones tecnológicas que generen un impacto significativo.
+  </h2>
+
+  <nav>
+    <SocialPill href="https://www.linkedin.com/in/henrymaldonado">
+      LinkedIn
+      <LinkedInIcon class="w-6 h-6" />
+    </SocialPill>
+
+    <SocialPill href="https://github.com/ELperrocode">
+      GitHub
+      <GitHubIcon class="w-6 h-6" />
+    </SocialPill>
+
+    <SocialPill href="mailto:henrymaldonadodev@gmail.com">
+      henrymaldonadodev@gmail.com
+      <MailIcon class="w-6 h-6" />
+    </SocialPill>
+  </nav>
+</section>
+  </section>

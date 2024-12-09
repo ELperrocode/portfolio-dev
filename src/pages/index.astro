@@ -1,59 +1,12 @@
 ---
+import Hero from '../components/Hero.astro';
+import Proyectos from '../components/Proyectos.astro';
 import Layout from '../layouts/Layout.astro';
-import Badge from '../components/Badge.astro';
-import LinkedInIcon from '../components/Icons/Linkedin.astro';
-import GitHubIcon from '../components/Icons/GitHub.astro';
-import MailIcon from '../components/Icons/Mail.astro';
-import SocialPill from '../components/SocialPill.astro';
 ---
 
 <Layout title="Portfolio Henry Maldonado">
-	<main>
-		<section class="w-full mx-auto lg:w-[740px] py-44">
-		<img 
-         class="w-14 h-14 rounded-full mb-4"
-         src="https://miro.medium.com/v2/resize:fit:1200/0*n-2bW82Z6m6U2bij.jpeg"
-         alt="pfp"
-         />
-
-		<h1 class="text-white text-5xl font-bold flex flex-row gap-x-4 pb-10">
-			Hola soy Henry 
-			<a
-  href="https://linkedin.com/in/henrymaldonado"
-  target="_blank"
-  rel="noopener"
-  class="flex items-center transition-transform transform hover:scale-105"
->
-  <Badge>
-    Disponible para trabajar
-  </Badge>
-</a>
-		</h1>
-		
-
-		<h2 class="text-xl text-wrap font-thin mb-5">
-			<span class="opacity-80 text-yellow-200">Estudiante de Desarrollo de Sofware</span> y Productor Musical
-			de <span class="opacity-80 text-red-300">Panamá</span>. En busca de oportunidades y experiencia.
-		</h2>
-
-	<nav>
-		<SocialPill href="https://www.linkedin.com/in/henrymaldonado">
-			LinkedIn
-			<LinkedInIcon class="w-6 h-6" />
-		</SocialPill>
-
-		<SocialPill href="https://github.com/ELperrocode">
-			GitHub
-			<GitHubIcon class="w-6 h-6" />
-		</SocialPill>
-
-		<SocialPill href="mailto:hm71054@gmail.com">
-			Email
-			<MailIcon class="w-6 h-6" />
-		</SocialPill>
-	
-	</nav>
-         </section>
-
-	</main>
+  <main role="main">
+    <Hero />
+    <Proyectos />
+  </main>
 </Layout>
