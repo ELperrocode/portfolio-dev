@@ -11,21 +11,31 @@ interface Props {
 const { title, description, repoLink, imgSrc, webLink } = Astro.props;
 ---
 
+<div
+  class="w-full h-80 p-4 bg-white/5 border border-white/20 backdrop-blur-0
+rounded-lg transition-all ease-in-out duration-300 flex flex-col drop-shadow-2xl
+ justify-between hover:shadow-[0_0_20px_1px_#e3dddc] hover:border-white  hover:ring-black hover:ring-offset-2"
+>
 
-<div class="w-full h-80 p-4 bg-white/5 border border-white/20 backdrop-blur-0
-rounded-lg transition-all ease-in-out duration-300 flex flex-col
- justify-between hover:shadow-[0_0_30px_1px_#e3dddc] hover:border-white/45">
-
-  
-
-  
   <div class="flex items-start">
-    <img src={imgSrc} class="w-80 h-72 object-cover rounded-lg mx-7" alt={title} />
+    <img
+      src={imgSrc}
+      class="w-80 h-72 object-cover rounded-lg mx-7"
+      alt={title}
+    />
     <div>
       <span class="text-2xl font-medium tracking-wider">{title}</span>
       <strong class="block mb-2">{description}</strong>
-      <a href={repoLink} class="text-[0.7rem] font-medium text-primary">View on GitHub</a>
-      {webLink && <a href={webLink} class="text-[0.7rem] font-medium text-accent ml-2">View Website</a>}
+      <a href={repoLink} class="text-[0.7rem] font-medium text-primary"
+        >View on GitHub</a
+      >
+      {
+        webLink && (
+          <a href={webLink} class="text-[0.7rem] font-medium text-accent ml-2">
+            View Website
+          </a>
+        )
+      }
     </div>
   </div>
 </div>

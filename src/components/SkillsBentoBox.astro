@@ -1,0 +1,57 @@
+---
+import SkillCard from './SkillCard.astro';
+
+const skills = {
+    frontend: {
+        title: 'Frontend',
+        icon: 'ri-code-s-slash-line',
+        color: 'text-yellow-300',
+        items: [
+            { name: 'React', icon: 'ri-reactjs-line', color: 'text-blue-400' },
+            {name : "React Native", icon: "ri-reactjs-line", color: "text-blue-200"},
+            { name: 'Next.js', icon: 'ri-nextjs-line', color: 'text-slate-400' },
+            {name: "Astro", icon: "ri-space-ship-line", color: "text-red-300"},
+            { name: 'Tailwind CSS', icon: 'ri-tailwind-css-line', color: 'text-cyan-300' },
+            { name: 'JavaScript/TypeScript', icon: 'ri-javascript-line', color: 'text-yellow-300' },
+           
+        ]
+    },
+    backend: {
+        title: 'Backend',
+        icon: 'ri-server-line',
+        color: 'text-green-300',
+        items: [
+            { name: 'Node.js', icon: 'ri-nodejs-line', color: 'text-slate-400' },
+            { name: 'SQL Databases', icon: 'ri-database-line', color: 'text-yellow-300' },
+            {name : "RESTful APIs", icon: "ri-links-line", color: "text-cyan-300"},
+            {name: "Java", icon: "ri-java-line", color: "text-orange-300"},
+            {name: "Spring Boot", icon: "ri-shut-down-line", color: "text-green-300"},
+            {name:"Laravel", icon:"ri-php-line", color:"text-red-300"},
+            {name: "Asp.Net", icon: "ri-character-recognition-line", color: "text-green-300"},
+            {name:"FilamentPHP", icon:"ri-rocket-line", color:"text-yellow-300"}
+        ]
+    },
+    tools: {
+        title: 'Herramientas',
+        icon: 'ri-tools-line',
+        color: 'text-blue-300',
+        items: [
+            { name: 'GitHub', icon: 'ri-github-fill', color: 'text-white' },
+            {name: "Aws", icon: "ri-amazon-fill", color: "text-yellow-300"},
+            { name: 'Docker', icon: 'ri-ship-fill', color: 'text-blue-300'},
+            {name:"Android Studio", icon:"ri-android-line", color:"text-green-300"},
+        ]
+    }
+};
+---
+
+<section class="relative z-10 mx-auto lg:w-[1000px] py-10">
+    <div class="max-w-4xl w-full">
+        <h2 class="text-3xl font-bold mb-6 text-left text-white">Mis Habilidades</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {Object.values(skills).map(skill => (
+                <SkillCard title={skill.title} icon={skill.icon} color={skill.color} items={skill.items} />
+            ))}
+        </div>
+    </div>
+</section>
