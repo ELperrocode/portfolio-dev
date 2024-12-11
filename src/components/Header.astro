@@ -1,9 +1,100 @@
-<header class="flex justify-center items-center py-5 w-[1120px] mx-auto" >
+---
+const navItems = [
+  {
+    title: "Inicio",
+    href: "#home"
+  },
+  {
+    title: "Proyectos",
+    href: "#projects"
+  },
+  {
+    title: "Habilidades",
+    href: "#skills"
+  },
+  {
+    title: "Sobre mí",
+    href: "#about"
+  }
+];
+---
 
-    <nav class="flex flex-row gap-x-10 opacity-80">
-        <a href="/">Home</a>
-        <a href="/about">About</a>
-        <a href="/projects">Projects</a>
-        <a href="/contact">Contact</a>
-    </nav>
+<header class="fixed top-0 z-50 w-full bg-background/50 backdrop-blur-sm border-b border-white/10">
+  <nav class="h-16 flex items-center justify-center mx-auto max-w-[1120px] px-4">
+    <div class="flex items-center justify-between w-full">
+      <a href="#home" class="text-xl font-bold text-primary">HM</a>
+      
+      <!-- Mobile Menu Button -->
+      <button id="menu-toggle" class="lg:hidden text-white" aria-label="Toggle Menu">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-16 6h16" />
+        </svg>
+      </button>
+
+      <!-- Desktop Navigation -->
+      <ul class="hidden lg:flex gap-x-8">
+        {
+          navItems.map((item) => (
+            <li>
+              <a
+                href={item.href}
+                class="nav-link text-sm text-gray-400 hover:text-white transition-colors py-2"
+              >
+                {item.title}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Mobile Navigation Menu -->
+  <div id="mobile-menu" class="lg:hidden hidden bg-background/95 backdrop-blur-sm border-b border-white/10">
+    <ul class="flex flex-col items-center py-4">
+      {
+        navItems.map((item) => (
+          <li class="w-full">
+            <a
+              href={item.href}
+              class="nav-link block text-center text-gray-400 hover:text-white transition-colors py-3"
+            >
+              {item.title}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
 </header>
+
+<script>
+  const menuToggle = document.getElementById('menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const navLinks = document.querySelectorAll('a[href^="#"]');
+
+  // Toggle mobile menu
+  menuToggle?.addEventListener('click', () => {
+    mobileMenu?.classList.toggle('hidden');
+  });
+
+  // Handle smooth scrolling
+  navLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const targetId = link.getAttribute('href')?.substring(1);
+      const targetElement = document.getElementById(targetId || '');
+      
+      if (targetElement) {
+        // Close mobile menu if open
+        mobileMenu?.classList.add('hidden');
+        
+        // Smooth scroll to target
+        targetElement.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+    });
+  });
+</script>
