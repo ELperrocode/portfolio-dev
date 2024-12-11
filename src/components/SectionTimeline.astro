@@ -1,0 +1,59 @@
+---
+const sections = [
+  { id: 'home', title: 'Inicio' },
+  { id: 'projects', title: 'Proyectos' },
+  { id: 'skills', title: 'Habilidades' },
+  { id: 'about', title: 'Sobre mí' }
+];
+---
+
+<div class="fixed right-4 top-1/2 -translate-y-1/2 z-50 hidden lg:flex flex-col items-end">
+  {sections.map((section) => (
+    <div class="group flex items-center gap-2 my-2">
+      <span class="text-xs text-gray-400 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+        {section.title}
+      </span>
+      <a
+        href={`#${section.id}`}
+        class="section-indicator w-3 h-3 rounded-full border-2 border-gray-400 hover:border-white transition-colors duration-200"
+        data-section={section.id}
+      >
+      </a>
+    </div>
+  ))}
+</div>
+
+<script>
+  const indicators = document.querySelectorAll('.section-indicator');
+  const sections = document.querySelectorAll('section[id]');
+
+  const observerOptions = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.5,
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      const id = entry.target.getAttribute('id');
+      const indicator = document.querySelector(`[data-section="${id}"]`);
+      
+      if (entry.isIntersecting) {
+        // Update timeline indicator
+        indicators.forEach(ind => ind.classList.remove('bg-primary', 'border-primary'));
+        indicator?.classList.add('bg-primary', 'border-primary');
+        
+        // Update navbar
+        const navLink = document.querySelector(`nav a[href="#${id}"]`);
+        document.querySelectorAll('nav a').forEach(link => {
+          link.classList.remove('text-primary');
+          link.classList.add('text-gray-400');
+        });
+        navLink?.classList.remove('text-gray-400');
+        navLink?.classList.add('text-primary');
+      }
+    });
+  }, observerOptions);
+
+  sections.forEach(section => observer.observe(section));
+</script>
