@@ -5,24 +5,25 @@ import LinkedInIcon from "./Icons/Linkedin.astro";
 import GitHubIcon from "./Icons/GitHub.astro";
 import MailIcon from "./Icons/Mail.astro";
 import PfpCard from "./PfpCard.astro";
-
-// Hero.astro
 ---
 
-<section class="relative z-10 w-full mx-auto lg:w-[1000px] py-64 flex flex-col lg:flex-row items-center lg:items-start gap-8">
-  <PfpCard class="flex-shrink-0 mr-4 lg:mr-8 " />
-  <article class="flex-1 ml-8">
-    <h1 class="text-white text-5xl font-bold flex flex-row gap-x-4 pb-5">
+<div class=" realtive  z-10 w-full mx-auto lg:w-[1000px] px-4 flex flex-col lg:flex-row items-center lg:items-start gap-8">
+  <div class="hidden lg:flex mr-4 lg:mr-8 -mt-9">
+    <PfpCard/>
+  </div>
+  
+  <article class="flex-1 lg:ml-8">
+    <h1 class="text-white text-4xl lg:text-5xl font-bold flex flex-row gap-x-4 pb-6 lg:pb-8">
       Hola soy Henry
     </h1>
-    <h2 class="text-xl text-wrap mb-5">
-      <span class="text-accent">Desarrollador Fullstack</span>,estudiante de último año de la carrera de Desarrollo
+    <h2 class="text-lg lg:text-xl text-wrap mb-6 lg:mb-8">
+      <span class="text-accent">Desarrollador Fullstack</span>, estudiante de último año de la carrera de Desarrollo
       de Software en la
-      <span class="text-primary"> Universidad Tecnológica de Panamá</span>.
-    Me apasiona crear soluciones tecnológicas que generen un impacto significativo en personas y organizaciones.
+      <span class="text-primary">Universidad Tecnológica de Panamá</span>.
+      Me apasiona crear soluciones tecnológicas que generen un impacto significativo en personas y organizaciones.
     </h2>
 
-    <nav>
+    <nav class="flex flex-wrap gap-4">
       <SocialPill href="https://www.linkedin.com/in/henrymaldonado">
         LinkedIn
         <LinkedInIcon class="w-6 h-6" />
@@ -39,5 +40,4 @@ import PfpCard from "./PfpCard.astro";
       </SocialPill>
     </nav>
   </article>
- 
-</section>
+</div>

@@ -1,5 +1,4 @@
 ---
-// ProjectCard.astro
 interface Props {
   title: string;
   description: string;
@@ -11,31 +10,26 @@ interface Props {
 const { title, description, repoLink, imgSrc, webLink } = Astro.props;
 ---
 
-<div
-  class="w-full h-80 p-4 bg-white/5 border border-white/20 backdrop-blur-0
-rounded-lg transition-all ease-in-out duration-300 flex flex-col drop-shadow-2xl
- justify-between hover:shadow-[0_0_20px_1px_#e3dddc] hover:border-white  hover:ring-black hover:ring-offset-2"
->
-
-  <div class="flex items-start">
+<div class="w-full p-4 bg-white/5 border border-white/20 backdrop-blur-0 rounded-lg transition-all ease-in-out duration-300 flex flex-col lg:flex-row gap-4 hover:shadow-[0_0_20px_1px_#e3dddc] hover:border-white hover:ring-black hover:ring-offset-2">
+  <div class="w-full lg:w-1/3">
     <img
       src={imgSrc}
-      class="w-80 h-72 object-cover rounded-lg mx-7"
+      class="w-full h-48 lg:h-full object-cover rounded-lg"
       alt={title}
     />
-    <div>
-      <span class="text-2xl font-medium tracking-wider">{title}</span>
-      <strong class="block mb-2">{description}</strong>
-      <a href={repoLink} class="text-[0.7rem] font-medium text-primary"
-        >View on GitHub</a
-      >
-      {
-        webLink && (
-          <a href={webLink} class="text-[0.7rem] font-medium text-accent ml-2">
-            View Website
-          </a>
-        )
-      }
+  </div>
+  <div class="flex flex-col flex-1 gap-2">
+    <h3 class="text-xl lg:text-2xl font-medium tracking-wider">{title}</h3>
+    <p class="text-sm lg:text-base text-gray-300">{description}</p>
+    <div class="flex gap-4 mt-auto">
+      <a href={repoLink} class="text-sm font-medium text-primary hover:text-accent transition-colors">
+        Ver en GitHub
+      </a>
+      {webLink && (
+        <a href={webLink} class="text-sm font-medium text-accent hover:text-primary transition-colors">
+          Ver Sitio Web
+        </a>
+      )}
     </div>
   </div>
 </div>
