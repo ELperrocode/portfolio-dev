@@ -5,9 +5,13 @@ import Projects from '../components/Projects.astro';
 import SkillsBentoBox from '../components/SkillsBentoBox.astro';
 import Layout from '../layouts/Layout.astro';
 import Footer from '../components/Footer.astro';
+const title = "Henry Maldonado Portfolio";
+const description = "Henry Maldonado Portfolio, Fullstack Developer";
+const keywords = "portafolio, portfolio, desarrollador, fullstack, Henry Maldonado, Henry, Maldonado, Henry Maldonado Portfolio, Henry Maldonado Portafolio, Henry Maldonado Desarrollador, Henry Maldonado Fullstack Developer, programador, developer, web developer, frontend, backend, Henry Maldonado Developer, Henry Maldonado Web Developer, Henry Maldonado Frontend Developer, Henry Maldonado Backend Developer, Henry Maldonado Programador";
 ---
 
-<Layout title="Portfolio Henry Maldonado">
+
+<Layout title={title} description={description} keywords={keywords}>
   <main role="main">
     <section id="home">
       <Hero />

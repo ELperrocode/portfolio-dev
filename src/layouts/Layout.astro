@@ -5,18 +5,23 @@ import "@fontsource-variable/jetbrains-mono";
 
 interface Props {
   title: string;
+  description: string;
+  keywords: string;
 }
 
-const { title } = Astro.props;
+
+const { title, description, keywords } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Astro description" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+    <meta name="description" content={description} />
+    <meta name="keywords" content={keywords} />
+    <meta name="author" content="Henry Maldonado" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.webp" />
     <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <meta name="generator" content={Astro.generator} />
