@@ -22,11 +22,11 @@ const { title, description, repoLink, imgSrc, webLink } = Astro.props;
     <h3 class="text-xl lg:text-2xl font-medium tracking-wider">{title}</h3>
     <p class="text-sm lg:text-base text-gray-300">{description}</p>
     <div class="flex gap-4 mt-auto">
-      <a href={repoLink} class="text-sm font-medium text-primary hover:text-accent transition-colors">
+      <a href={repoLink} target="_blank" class="text-sm font-medium text-primary hover:text-accent transition-colors">
         Ver en GitHub
       </a>
       {webLink && (
-        <a href={webLink} class="text-sm font-medium text-accent hover:text-primary transition-colors">
+        <a href={webLink} target="_blank" class="text-sm font-medium text-accent hover:text-primary transition-colors">
           Ver Sitio Web
         </a>
       )}

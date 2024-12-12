@@ -39,11 +39,11 @@ const sections = [
       const indicator = document.querySelector(`[data-section="${id}"]`);
       
       if (entry.isIntersecting) {
-        // Update timeline indicator
+        
         indicators.forEach(ind => ind.classList.remove('bg-primary', 'border-primary'));
         indicator?.classList.add('bg-primary', 'border-primary');
         
-        // Update navbar
+       
         const navLink = document.querySelector(`nav a[href="#${id}"]`);
         document.querySelectorAll('nav a').forEach(link => {
           link.classList.remove('text-primary');
