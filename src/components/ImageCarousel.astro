@@ -1,0 +1,79 @@
+---
+interface Props {
+  images: {
+    src: string;
+    alt: string;
+  }[];
+}
+
+const { images } = Astro.props;
+---
+
+<div class="relative lg:w-full h-48 lg:h-full group">
+  <div class="swiper h-full">
+    <div class="swiper-wrapper">
+      {
+        images.map((image) => (
+          <div class="swiper-slide">
+            <img
+              src={image.src}
+              alt={image.alt}
+              class="w-full h-full object-cover rounded-lg"
+            />
+          </div>
+        ))
+      }
+    </div>
+    
+    
+    <div class="absolute left-4 right-4 top-1/2 -translate-y-1/2 z-10 flex justify-between opacity-0 group-hover:opacity-100 transition-opacity">
+      <button class="swiper-button-prev after:content-[''] text-white rounded-full p-2 transition-colors">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+        </svg>
+      </button>
+      <button class="swiper-button-next after:content-[''] text-white rounded-full p-2 transition-colors">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+        </svg>
+      </button>
+    </div>
+    
+
+    <div class="swiper-pagination"></div>
+  </div>
+</div>
+
+<script>
+  import Swiper from 'swiper';
+  import { Navigation, Pagination, Autoplay } from 'swiper/modules';
+  import 'swiper/css';
+  import 'swiper/css/navigation';
+  import 'swiper/css/pagination';
+
+  new Swiper('.swiper', {
+    modules: [Navigation, Pagination, Autoplay],
+    loop: true,
+    autoplay: {
+      delay: 5000,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+  });
+</script>
+
+<style>
+  .swiper-pagination-bullet {
+    background: white !important;
+  }
+  .swiper-pagination-bullet-active {
+    background: theme(colors.primary) !important;
+  }
+</style>

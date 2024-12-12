@@ -3,28 +3,112 @@ import MoreProjectsBtn from "./MoreProjectsBtn.astro";
 import ProjectCard from "./ProjectCard.astro";
 ---
 
-<div class="w-full mx-4 lg:w-[1100px] ">
+<div class="mt-20 w-11/12 mx-4 lg:w-[1100px] ">
   <h2 class="text-3xl lg:text-4xl font-bold mb-8">Proyectos</h2>
   <div class="flex flex-col gap-8">
     <ProjectCard
-      title="Project 1"
-      imgSrc="https://github.githubassets.com/assets/social-2deb6d7d43e7.jpg"
-      description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus eget sapien lorem ipsum dolor sit amet."
-      repoLink="https://github.com/yourusername/project1"
-      webLink="https://yourwebsite.com/project1"
+      title="Sistema de Gestión Clínica"
+      images={[
+        {
+          src: "medcare1.png",
+          alt: "nedcare1 screenshot"
+        },
+        {
+          src: "medcare2.png",
+          alt: "medcare2 screenshot"
+        },
+        {
+          src: "medcare3.png",
+          alt: "medcare3 screenshot"
+        },
+        {
+          src: "medcare4.png",
+          alt: "medcare4 screenshot"
+        },
+        {
+          src: "medcare5.png",
+          alt: "medcare5 screenshot"
+        },
+        {
+          src: "medcare6.png",
+          alt: "medcare6 screenshot"
+        },
+        {
+          src: "medcare7.png",
+          alt: "medcare7 screenshot"
+        }
+
+      ]}
+      description="Sistema de gestión clínica para la administración de pacientes, médicos, citas médicas, inventario, facturacion. además de la generación de reportes, alertas, envío de correos. Manejo de roles y permisos totalmente perzonalizable. También cuenta con funcionalidades de API rest por lo que puede fungir de CMS, ademas de creación y asignacion de tokens perzonalizables."
+      repoLink="https://github.com/ELperrocode/proyectoclinica"
+     
+      tags={["FilamentPHP", "Laravel", "Tailwind CSS", "PostgreSQL", "Livewire", "Alpine.js"]}
     />
     <ProjectCard
-      title="PROJECT 2"
-      imgSrc="https://github.githubassets.com/assets/social-2deb6d7d43e7.jpg"
-      description="Brief description of the project."
-      repoLink="https://github.com/yourusername/project2"
+      title="ArteSano"
+      images={[
+        {
+          src: "artesano1.png",
+          alt: "artesano screenshot"
+        },
+        {
+          src: "artesano2.png",
+          alt: "artesano screenshot"
+        },
+        {
+          src: "artesano3.png",
+          alt: "artesano screenshot" 
+        },
+        {
+          src: "artesano4.png",
+          alt: "artesano screenshot"
+        },
+        {
+          src: "artesano5.png",
+          alt: "artesano screenshot"
+        }
+      ]}
+      description="ArteSano es una plataforma de comercio electrónico que busca dar un espacio digital a pequeños emprendedores, donde puedan ampliar su exposición y alcance de sus productos. La plataforma a parte de ser un e-commerce funcional, esta construida sobre un headless CMS como es Strapi,lo que la convierte un sitio web dinámico,escalable y muy facil de mantener para el usuario. [Este fue un proyecto para una Hackathon en la que obtuvimos el primer lugar y fue desarrollado en menos de 24 horas]"
+      repoLink="https://github.com/ELperrocode/arteSano"
+      webLink="https://arte-sano-three.vercel.app/"
+      tags={["Next.js", "Shadcn", "Strapi", "Tailwind CSS","Typescript","React"]}
     />
     <ProjectCard
-      title="PROJECT 3"
-      imgSrc="https://github.githubassets.com/assets/social-2deb6d7d43e7.jpg"
-      description="Brief description of the project."
-      repoLink="https://github.com/yourusername/project3"
-      webLink="https://yourwebsite.com/project3"
+      title="Fake News Detector"
+      images={[
+        {
+          src: "fakenews1.png",
+          alt: "Fake News Detector screenshot 1"
+        },
+        {
+          src: "fakenews2.png",
+          alt: "Fake News Detector screenshot 2"
+        }
+      ]}
+      description="Esta es una web app que utiliza inteligencia artificial para detectar noticias falsas. La aplicación se conecta a una API de IA para analizar el contenido de la noticia y determinar si es falsa o no, en base a su contenido, estilo de escritura, presencia de fuentes y otros parametros."
+      repoLink="https://github.com/ELperrocode/FakeNewsDetector"
+      webLink="https://fake-news-detector-psi.vercel.app/"
+      tags={["React", "HuggingFace", "IA", "Large Language Model"]}
+    />
+    <ProjectCard
+      title="Web de Apuestas Deportivas"
+      images={[
+        {
+          src: "bets1.png",
+          alt: "Bets screenshot 1"
+        },
+        {
+          src: "bets2.png",
+          alt: "Bets screenshot 2"
+        },
+        {
+          src: "bets3.png",
+          alt: "Bets screenshot 3"
+        }
+      ]}
+      description="Una web de apuestas deportivas, la base de datos cuenta con procedimientos internos para la actualización de saldos, con un Api construida desde cero, con datos reales de más de 50 ligas y partidos. La web cuenta con un sistema de búsqueda por equipo o liga, paginación, autenticación, registro, apuestas, pagos, historial de apuestas y un sistema de validación de resultados simulados."
+      repoLink="https://github.com/ELperrocode/ApuestasDeportivasFront"
+      tags={["React", "Next.Js", "TypeScript", "C#","ASP.NET Core"]}
     />
   </div>
   <div class="flex justify-end pt-8">
